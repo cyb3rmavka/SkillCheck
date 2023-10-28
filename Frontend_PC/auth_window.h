@@ -6,8 +6,7 @@ class QLineEdit;
 class QPushButton;
 class QLabel;
 
-class AuthorizationDialog : public QDialog
-{
+class AuthorizationDialog : public QDialog {
     Q_OBJECT
 
 public:

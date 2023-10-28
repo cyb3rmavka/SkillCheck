@@ -7,8 +7,7 @@
 #include <QPushButton>
 
 AuthorizationDialog::AuthorizationDialog(QWidget *parent)
-    : QDialog(parent)
-{
+    : QDialog(parent) {
     QVBoxLayout layout(this);
 
     usernameInput = new QLineEdit;
@@ -36,8 +35,7 @@ AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     connect(loginButton, &QPushButton::clicked, this, &AuthorizationDialog::handleLoginButton);
 }
 
-void AuthorizationDialog::handleLoginButton()
-{
+void AuthorizationDialog::handleLoginButton() {
     QString username = usernameInput->text();
     QString password = passwordInput->text();
 

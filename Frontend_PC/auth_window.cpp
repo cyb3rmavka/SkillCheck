@@ -14,7 +14,7 @@ AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     passwordInput = new QLineEdit;
     loginButton = new QPushButton("Login");
     resultLabel = new QLabel;
-
+    registerButton = new QPushButton("Register");
     usernameInput->setPlaceholderText("Username");
     passwordInput->setPlaceholderText("Password");
     usernameInput->setEchoMode(QLineEdit::Normal);
@@ -24,6 +24,7 @@ AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     usernameInput->setStyleSheet(styleSheet);
     passwordInput->setStyleSheet(styleSheet);
 
+    registerButton->setStyleSheet("background-color: blue; color: white;");
     loginButton->setStyleSheet("background-color: blue; color: white;");
     resultLabel->setStyleSheet("color: blue;");
 
@@ -31,7 +32,7 @@ AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     layout->addWidget(passwordInput);
     layout->addWidget(loginButton);
     layout->addWidget(resultLabel);
-
+    layout->addWidget(registerButton);
     connect(loginButton, &QPushButton::clicked, this, &AuthorizationDialog::handleLoginButton);
 }
 

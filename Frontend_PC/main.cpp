@@ -11,8 +11,10 @@
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    RegistrationDialog dialog;
-    dialog.setWindowTitle("User Registration Form");
+    AuthorizationDialog dialog;
+    //RegistrationDialog dialog;
+
+    //dialog.setWindowTitle("User Registration Form");
     dialog.show();
 
     return app.exec();

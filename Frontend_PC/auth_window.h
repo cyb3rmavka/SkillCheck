@@ -19,6 +19,7 @@ private:
     QLineEdit* usernameInput;
     QLineEdit* passwordInput;
     QPushButton* loginButton;
+    QPushButton* registerButton;
     QLabel* resultLabel;
 };
 

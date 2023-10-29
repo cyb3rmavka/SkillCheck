@@ -6,7 +6,14 @@
 #include <QLabel>
 #include <QMessageBox>
 
+#include "auth_window.h"
+#include "register_form.h"
+
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
+    RegistrationDialog dialog;
+    dialog.setWindowTitle("User Registration Form");
+    dialog.show();
+
     return app.exec();
 }

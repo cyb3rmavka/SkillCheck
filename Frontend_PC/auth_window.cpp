@@ -8,7 +8,7 @@
 
 AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     : QDialog(parent) {
-    QVBoxLayout layout(this);
+    QVBoxLayout* layout = new QVBoxLayout(this);
 
     usernameInput = new QLineEdit;
     passwordInput = new QLineEdit;
@@ -19,7 +19,7 @@ AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     passwordInput->setPlaceholderText("Password");
     usernameInput->setEchoMode(QLineEdit::Normal);
     passwordInput->setEchoMode(QLineEdit::Password);
-
+    this->setWindowTitle("Authorization Form");
     QString styleSheet = "background-color: white; color: blue; border: 1px solid blue;";
     usernameInput->setStyleSheet(styleSheet);
     passwordInput->setStyleSheet(styleSheet);
@@ -27,10 +27,10 @@ AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     loginButton->setStyleSheet("background-color: blue; color: white;");
     resultLabel->setStyleSheet("color: blue;");
 
-    layout.addWidget(usernameInput);
-    layout.addWidget(passwordInput);
-    layout.addWidget(loginButton);
-    layout.addWidget(resultLabel);
+    layout->addWidget(usernameInput);
+    layout->addWidget(passwordInput);
+    layout->addWidget(loginButton);
+    layout->addWidget(resultLabel);
 
     connect(loginButton, &QPushButton::clicked, this, &AuthorizationDialog::handleLoginButton);
 }

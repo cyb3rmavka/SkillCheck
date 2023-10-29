@@ -1,5 +1,5 @@
-#ifndef REGISTER_FORM_H
-#define REGISTER_FORM_H
+#ifndef REGISTER_WINDOW_H
+#define REGISTER_WINDOW_H
 
 #include <QDialog>
 
@@ -26,4 +26,4 @@ private:
     QPushButton *registerButton;
 };
 
-#endif // REGISTER_FORM_H
+#endif // REGISTER_WINDOW_H

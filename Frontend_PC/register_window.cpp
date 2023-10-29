@@ -1,4 +1,4 @@
-#include "register_form.h"
+#include "register_window.h"
 #include <QVBoxLayout>
 #include <QMessageBox>
 #include <QPushButton>

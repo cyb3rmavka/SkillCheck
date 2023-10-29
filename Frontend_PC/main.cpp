@@ -7,7 +7,7 @@
 #include <QMessageBox>
 
 #include "auth_window.h"
-#include "register_form.h"
+#include "register_window.h"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);

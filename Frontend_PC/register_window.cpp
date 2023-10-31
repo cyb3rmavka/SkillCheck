@@ -4,8 +4,7 @@
 #include <QPushButton>
 
 RegistrationDialog::RegistrationDialog(QWidget *parent)
-    : QDialog(parent)
-{
+    : QDialog(parent) {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
     nameLabel = new QLabel("Full Name:");
@@ -27,8 +26,7 @@ RegistrationDialog::RegistrationDialog(QWidget *parent)
     connect(registerButton, &QPushButton::clicked, this, &RegistrationDialog::registerUser);
 }
 
-void RegistrationDialog::registerUser()
-{
+void RegistrationDialog::registerUser() {
     QString fullName = nameInput->text();
     QString userType;
 
@@ -40,9 +38,6 @@ void RegistrationDialog::registerUser()
         QMessageBox::critical(this, "Error", "Please select a user type.");
         return;
     }
-
-    // You can process the registration data here, e.g., save it to a database
-    // Replace this with your actual registration logic
 
     QMessageBox::information(this, "Registration Successful", "Registration complete. User type: " + userType);
 }

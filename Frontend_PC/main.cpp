@@ -20,6 +20,7 @@ public:
         QTextEdit *questionTextEdit = new QTextEdit;
 
         QLabel *answersLabel = new QLabel("Answers:");
+
         QLineEdit *answer1 = new QLineEdit;
         QLineEdit *answer2 = new QLineEdit;
         QLineEdit *answer3 = new QLineEdit;

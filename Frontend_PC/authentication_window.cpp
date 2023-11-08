@@ -6,44 +6,27 @@
 #include <QLineEdit>
 #include <QPushButton>
 
-AuthenticationWidget::AuthenticationWidget(QWidget *parent)
-    : QDialog(parent) {
-    QVBoxLayout* layout = new QVBoxLayout(this);
+AuthenticationWidget::AuthenticationWidget(QWidget *parent): QWidget(parent){
+    gridLayout = new QGridLayout(this);
+    usernameInput = new QLineEdit();
+    passwordInput = new QLineEdit();
+    usernameLabel = new QLabel("Логін:");
+    passwordLabel = new QLabel("Пароль");
+    loginButton = new QPushButton("Увійти");
+    registerButton = new QPushButton("Реєстрація");
 
-    usernameInput = new QLineEdit;
-    passwordInput = new QLineEdit;
-    loginButton = new QPushButton("Login");
-    resultLabel = new QLabel;
-    registerButton = new QPushButton("Register");
-    usernameInput->setPlaceholderText("Username");
-    passwordInput->setPlaceholderText("Password");
-    usernameInput->setEchoMode(QLineEdit::Normal);
-    passwordInput->setEchoMode(QLineEdit::Password);
-    this->setWindowTitle("Authorization Form");
-    QString styleSheet = "background-color: white; color: blue; border: 1px solid blue;";
-    usernameInput->setStyleSheet(styleSheet);
-    passwordInput->setStyleSheet(styleSheet);
+    gridLayout->addWidget(usernameLabel, 0, 0);
+    gridLayout->addWidget(usernameInput, 0, 1);
+    gridLayout->addWidget(passwordLabel, 1, 0);
+    gridLayout->addWidget(passwordInput, 1, 1);
 
-    registerButton->setStyleSheet("background-color: blue; color: white;");
-    loginButton->setStyleSheet("background-color: blue; color: white;");
-    resultLabel->setStyleSheet("color: blue;");
+    buttonLayout = new QHBoxLayout;
+    buttonLayout->addWidget(loginButton, 1, Qt::AlignCenter);
+    buttonLayout->addWidget(registerButton, 1, Qt::AlignCenter);
 
-    layout->addWidget(usernameInput);
-    layout->addWidget(passwordInput);
-    layout->addWidget(loginButton);
-    layout->addWidget(resultLabel);
-    layout->addWidget(registerButton);
-    connect(loginButton, &QPushButton::clicked, this, &AuthenticationWidget::handleLoginButton);
+    //gridLayout->addWidget(buttonRegister, 2, 1);
+    gridLayout->addLayout(buttonLayout, 2, 0, 1, 2);
+    gridLayout->setSpacing(10);
 }
 
-void AuthenticationWidget::handleLoginButton() {
-    QString username = usernameInput->text();
-    QString password = passwordInput->text();
-
-    // Replace this with your actual authentication logic
-    if (username == "your_username" && password == "your_password") {
-        resultLabel->setText("Login successful");
-    } else {
-        resultLabel->setText("Login failed. Please check your credentials.");
-    }
-}
+AuthenticationWidget::~AuthenticationWidget(){}

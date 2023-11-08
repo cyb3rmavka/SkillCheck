@@ -23,7 +23,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Frontend_PC
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        auth_window.h auth_window.cpp
+        authentication_window.h authentication_window.cpp
         register_window.h register_window.cpp
     )
 # Define target properties for Android with Qt 6 as:

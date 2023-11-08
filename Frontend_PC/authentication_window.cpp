@@ -1,4 +1,4 @@
-#include "auth_window.h"
+#include "authentication_window.h"
 
 #include <QVBoxLayout>
 #include <QMessageBox>
@@ -6,7 +6,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 
-AuthorizationDialog::AuthorizationDialog(QWidget *parent)
+AuthenticationWidget::AuthenticationWidget(QWidget *parent)
     : QDialog(parent) {
     QVBoxLayout* layout = new QVBoxLayout(this);
 
@@ -33,10 +33,10 @@ AuthorizationDialog::AuthorizationDialog(QWidget *parent)
     layout->addWidget(loginButton);
     layout->addWidget(resultLabel);
     layout->addWidget(registerButton);
-    connect(loginButton, &QPushButton::clicked, this, &AuthorizationDialog::handleLoginButton);
+    connect(loginButton, &QPushButton::clicked, this, &AuthenticationWidget::handleLoginButton);
 }
 
-void AuthorizationDialog::handleLoginButton() {
+void AuthenticationWidget::handleLoginButton() {
     QString username = usernameInput->text();
     QString password = passwordInput->text();
 

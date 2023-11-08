@@ -1,16 +1,15 @@
 #ifndef AUTH_H
 #define AUTH_H
-#include <QDialog>
+#include <QWidget>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 
-class QLineEdit;
-class QPushButton;
-class QLabel;
-
-class AuthorizationDialog : public QDialog {
+class AuthenticationWidget : public QWidget {
     Q_OBJECT
 
 public:
-    AuthorizationDialog(QWidget *parent = nullptr);
+    AuthenticationWidget(QWidget *parent = nullptr);
 
 private slots:
     void handleLoginButton();

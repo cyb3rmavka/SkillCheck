@@ -8,7 +8,7 @@
 #include <QMessageBox>
 
 #include "authentication_window.h"
-
+#include "register_window.h"
 
 class TrainingTestForm : public QWidget {
     Q_OBJECT
@@ -52,7 +52,7 @@ private slots:
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    AuthenticationWidget aw;
+    RegistrationDialog aw;
     aw.show();
     return app.exec();
 }

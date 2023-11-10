@@ -7,14 +7,14 @@ RegistrationDialog::RegistrationDialog(QWidget *parent)
     : QDialog(parent) {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    nameLabel = new QLabel("Full Name:");
+    nameLabel = new QLabel("ПІБ");
     nameInput = new QLineEdit;
 
-    userTypeLabel = new QLabel("User Type:");
-    studentRadio = new QRadioButton("Student");
-    teacherRadio = new QRadioButton("Teacher");
+    userTypeLabel = new QLabel("Тип користувача:");
+    studentRadio = new QRadioButton("Студент");
+    teacherRadio = new QRadioButton("Викладач");
 
-    registerButton = new QPushButton("Register");
+    registerButton = new QPushButton("Реєстрація");
 
     layout->addWidget(nameLabel);
     layout->addWidget(nameInput);

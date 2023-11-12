@@ -22,16 +22,13 @@ include_directories(${MYSQL_INCLUDE_DIR})
 
 set(PROJECT_SOURCES
     main.cpp
-    authentication_window.h
-    authentication_window.cpp
-    register_window.h
-    register_window.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Frontend_PC
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+
     )
 else()
     if(ANDROID)

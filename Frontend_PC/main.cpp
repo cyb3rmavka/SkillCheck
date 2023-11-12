@@ -52,7 +52,7 @@ private slots:
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    RegistrationDialog aw;
+    AuthenticationWidget aw;
     aw.show();
     return app.exec();
 }
